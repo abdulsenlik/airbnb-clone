@@ -11,7 +11,7 @@ export default async function getListingsById(
     try {
         const {listingId} = params;
 
-        if (!listingId || !ObjectId.isValid(listingId)) {
+        if (!listingId || typeof listingId !== "string") {
             throw new Error("Invalid listing ID format.");
         }
 
